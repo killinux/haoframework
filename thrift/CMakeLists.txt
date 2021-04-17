@@ -22,7 +22,7 @@ include_directories("/usr/local/thrift/include/thrift")
 
 # 源码集合
 set(demo_SOURCES 
-  gen-cpp/demo_server.cpp
+  demo_server.cpp
   gen-cpp/UserStorage.cpp
   gen-cpp/demo_types.cpp
   gen-cpp/demo_constants.cpp
@@ -33,7 +33,7 @@ add_library(demo STATIC ${demo_SOURCES})
 target_link_libraries(demo thrift)
 
 # 同下
-add_executable(demo_server gen-cpp/demo_server.cpp)
+add_executable(demo_server demo_server.cpp)
 target_link_libraries(demo_server demo)
 target_link_libraries(demo_server thrift)
 
